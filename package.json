@@ -1,6 +1,6 @@
 {
   "name": "iran-map-jquery",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This map is made to display your favorite content based on each province.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

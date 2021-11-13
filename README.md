@@ -1,7 +1,7 @@
 # iran-map-jquery
 This map is made to display your favorite content based on each province.
 
-[![NPM](https://img.shields.io/badge/npm-v1.0.1-blue)](https://www.npmjs.com/package/iran-map-jquery) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/badge/npm-v1.0.2-blue)](https://www.npmjs.com/package/iran-map-jquery) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 <div align="center">
     <img src="./public/Map.gif" width="1000">
@@ -53,12 +53,12 @@ First, make sure you have **[jQuery](https://www.npmjs.com/package/jquery)** ins
 </body>
 ```
 
-* ####**In Map**
+* #### **In Map**
   * **data-province-active :** provinces you want to be available.[List of provinces](#ProvincesList) ![NPM](https://img.shields.io/badge/Mandatory-red)
   * **data-province-center :** select the province you want to be the main representative. ![NPM](https://img.shields.io/badge/voluntary-greeb)
   * **data-province-show :** the province you want to be active in the first.  ![NPM](https://img.shields.io/badge/voluntary-greeb)
  
-* ####**In List**
+* #### **In List**
   * **data-city :** The show name of the province.
   * **data-province :** Name of the province based on the [List of provinces](#ProvincesList).
   
