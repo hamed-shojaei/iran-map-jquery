@@ -1,0 +1,257 @@
+@import "variable.scss";
+
+.Demo {
+  padding: 3rem 0;
+  color: $black;
+  font-weight: 400;
+  font-family: $main-Fa-font;
+  direction: rtl;
+
+  #IranMap {
+    svg {
+      position: sticky;
+      top: 0;
+
+      path {
+        transition: 0.2s;
+      }
+
+      #Sea {
+        path {
+          fill: #5C9BFF;
+        }
+      }
+
+      #Border {
+        path {
+          fill: $white;
+        }
+      }
+
+      > g {
+        pointer-events: none;
+
+        > .Location {
+          display: none;
+          fill: $dark-red;
+          pointer-events: none;
+          transform: translateY(-10px);
+          transition: 0.2s;
+          visibility: hidden;
+          opacity: 0;
+        }
+
+        > .Star {
+          display: none;
+          fill: $orange;
+          pointer-events: none;
+        }
+
+        > .Text {
+          display: none;
+          fill: $black;
+          pointer-events: none;
+        }
+
+        > .Province {
+          fill: $lighter-gray;
+          transition: 0.2s;
+        }
+
+        &.active {
+          pointer-events: auto;
+
+          > .Province {
+            fill: $light-gray;
+          }
+
+          > .Location {
+            display: block;
+          }
+
+          > .Text {
+            display: block;
+          }
+
+          &.main {
+            > .Location {
+              display: none;
+            }
+
+            > .Province {
+              fill: $dark-red;
+            }
+
+            > .Star {
+              display: block;
+            }
+
+            > .Text {
+              fill: $white;
+            }
+          }
+
+          &.show {
+            pointer-events: none;
+
+            > .Province {
+              fill: $orange;
+            }
+
+            > .Location {
+              transform: translateY(0);
+              visibility: visible;
+              opacity: 1;
+            }
+
+            > .Star {
+              fill: $dark-red;
+            }
+
+            > .Text {
+              fill: $black;
+            }
+          }
+
+          &:not(.show):hover {
+            > .Province {
+              fill: $orange;
+              cursor: pointer;
+            }
+
+            > .Star {
+              fill: $dark-red;
+            }
+
+            > .Text {
+              fill: $black;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #IranMapList {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    -webkit-justify-content: center;
+
+    > .Item {
+      position: relative;
+      border: 4px solid $brown;
+      border-radius: 1rem;
+      padding: 3rem 1rem 1rem;
+      opacity: 1;
+      display: block;
+      margin-top: 5rem;
+
+      &:not(.active) {
+        display: none;
+      }
+
+      &::after {
+        content: '\f3c5';
+        font-family: $font-awesome-solid;
+        position: absolute;
+        top: -40px;
+        right: -20.2px;
+        color: $brown;
+        font-size: 3rem;
+      }
+
+      &::before {
+        content: attr(data-city);
+        position: absolute;
+        background: $white;
+        top: -28px;
+        right: 0;
+        padding: 0 3rem 0 2rem;
+        font-size: 30px;
+        color: $brown;
+        font-weight: 700;
+
+        @media (max-width: 575.98px) {
+          font-size: 20px;
+          top: -18px;
+          padding: 0 2rem 0 1rem;
+        }
+      }
+
+      > section {
+        display: flex;
+        align-items: flex-start;
+        -webkit-align-items: flex-start;
+        margin-bottom: 1.5rem;
+
+        h6 {
+          margin: 0;
+          white-space: nowrap;
+
+          @media (max-width: 575.98px) {
+            font-size: 13px;
+          }
+        }
+
+        > div {
+          margin-right: 0.5rem;
+          margin-top: -4px;
+          display: flex;
+          flex-direction: column;
+          -ms-flex-direction: column;
+          -webkit-flex-direction: column;
+
+          span {
+
+            &:not(:last-child) {
+              margin-bottom: 0.7rem;
+            }
+
+            @media (max-width: 575.98px) {
+              font-size: 13px;
+            }
+          }
+        }
+
+        &.Phone {
+          > div {
+            margin-top: -2px;
+          }
+        }
+
+        &.Option {
+          margin: 2rem 0 0;
+          justify-content: flex-end;
+          -webkit-justify-content: flex-end;
+
+          > a {
+            display: flex;
+            align-items: center;
+            -webkit-align-items: center;
+            justify-content: center;
+            -webkit-justify-content: center;
+            width: 45px;
+            height: 45px;
+            border: 3px solid $dark-red;
+            border-radius: 0.5rem;
+            color: $dark-red;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: 0.2s;
+
+            &:nth-of-type(1) {
+              margin-left: 0.5rem;
+            }
+
+            &:hover {
+              border-color: $orange;
+              color: $orange;
+            }
+          }
+        }
+      }
+    }
+  }
+}

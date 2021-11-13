@@ -1,0 +1,206 @@
+.Demo {
+  padding: 3rem 0;
+  color: #000000;
+  font-weight: 400;
+  font-family: "FaVazir";
+  direction: rtl;
+}
+.Demo #IranMap svg {
+  position: sticky;
+  top: 0;
+}
+.Demo #IranMap svg path {
+  transition: 0.2s;
+}
+.Demo #IranMap svg #Sea path {
+  fill: #5C9BFF;
+}
+.Demo #IranMap svg #Border path {
+  fill: #FFFFFF;
+}
+.Demo #IranMap svg > g {
+  pointer-events: none;
+}
+.Demo #IranMap svg > g > .Location {
+  display: none;
+  fill: #6F1517;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: 0.2s;
+  visibility: hidden;
+  opacity: 0;
+}
+.Demo #IranMap svg > g > .Star {
+  display: none;
+  fill: #f7b538;
+  pointer-events: none;
+}
+.Demo #IranMap svg > g > .Text {
+  display: none;
+  fill: #000000;
+  pointer-events: none;
+}
+.Demo #IranMap svg > g > .Province {
+  fill: #E4E4E4;
+  transition: 0.2s;
+}
+.Demo #IranMap svg > g.active {
+  pointer-events: auto;
+}
+.Demo #IranMap svg > g.active > .Province {
+  fill: #C6C6C6;
+}
+.Demo #IranMap svg > g.active > .Location {
+  display: block;
+}
+.Demo #IranMap svg > g.active > .Text {
+  display: block;
+}
+.Demo #IranMap svg > g.active.main > .Location {
+  display: none;
+}
+.Demo #IranMap svg > g.active.main > .Province {
+  fill: #6F1517;
+}
+.Demo #IranMap svg > g.active.main > .Star {
+  display: block;
+}
+.Demo #IranMap svg > g.active.main > .Text {
+  fill: #FFFFFF;
+}
+.Demo #IranMap svg > g.active.show {
+  pointer-events: none;
+}
+.Demo #IranMap svg > g.active.show > .Province {
+  fill: #f7b538;
+}
+.Demo #IranMap svg > g.active.show > .Location {
+  transform: translateY(0);
+  visibility: visible;
+  opacity: 1;
+}
+.Demo #IranMap svg > g.active.show > .Star {
+  fill: #6F1517;
+}
+.Demo #IranMap svg > g.active.show > .Text {
+  fill: #000000;
+}
+.Demo #IranMap svg > g.active:not(.show):hover > .Province {
+  fill: #f7b538;
+  cursor: pointer;
+}
+.Demo #IranMap svg > g.active:not(.show):hover > .Star {
+  fill: #6F1517;
+}
+.Demo #IranMap svg > g.active:not(.show):hover > .Text {
+  fill: #000000;
+}
+.Demo #IranMapList {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+.Demo #IranMapList > .Item {
+  position: relative;
+  border: 4px solid #4A0D0D;
+  border-radius: 1rem;
+  padding: 3rem 1rem 1rem;
+  opacity: 1;
+  display: block;
+  margin-top: 5rem;
+}
+.Demo #IranMapList > .Item:not(.active) {
+  display: none;
+}
+.Demo #IranMapList > .Item::after {
+  content: "\f3c5";
+  font-family: "Font Awesome 6 Solid";
+  position: absolute;
+  top: -40px;
+  right: -20.2px;
+  color: #4A0D0D;
+  font-size: 3rem;
+}
+.Demo #IranMapList > .Item::before {
+  content: attr(data-city);
+  position: absolute;
+  background: #FFFFFF;
+  top: -28px;
+  right: 0;
+  padding: 0 3rem 0 2rem;
+  font-size: 30px;
+  color: #4A0D0D;
+  font-weight: 700;
+}
+@media (max-width: 575.98px) {
+  .Demo #IranMapList > .Item::before {
+    font-size: 20px;
+    top: -18px;
+    padding: 0 2rem 0 1rem;
+  }
+}
+.Demo #IranMapList > .Item > section {
+  display: flex;
+  align-items: flex-start;
+  -webkit-align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+.Demo #IranMapList > .Item > section h6 {
+  margin: 0;
+  white-space: nowrap;
+}
+@media (max-width: 575.98px) {
+  .Demo #IranMapList > .Item > section h6 {
+    font-size: 13px;
+  }
+}
+.Demo #IranMapList > .Item > section > div {
+  margin-right: 0.5rem;
+  margin-top: -4px;
+  display: flex;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+}
+.Demo #IranMapList > .Item > section > div span:not(:last-child) {
+  margin-bottom: 0.7rem;
+}
+@media (max-width: 575.98px) {
+  .Demo #IranMapList > .Item > section > div span {
+    font-size: 13px;
+  }
+}
+.Demo #IranMapList > .Item > section.Phone > div {
+  margin-top: -2px;
+}
+.Demo #IranMapList > .Item > section.Option {
+  margin: 2rem 0 0;
+  justify-content: flex-end;
+  -webkit-justify-content: flex-end;
+}
+.Demo #IranMapList > .Item > section.Option > a {
+  display: flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  width: 45px;
+  height: 45px;
+  border: 3px solid #6F1517;
+  border-radius: 0.5rem;
+  color: #6F1517;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: 0.2s;
+}
+.Demo #IranMapList > .Item > section.Option > a:nth-of-type(1) {
+  margin-left: 0.5rem;
+}
+.Demo #IranMapList > .Item > section.Option > a:hover {
+  border-color: #f7b538;
+  color: #f7b538;
+}
+
+/*# sourceMappingURL=map.css.map */
